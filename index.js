@@ -13,4 +13,4 @@ const exceptionHandler = () => {
         //エラーを捕まえても動作させたい処理があればここに書く
     }
 };
-exeeptionHandler();
+exceptionHandler();
