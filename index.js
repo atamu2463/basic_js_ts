@@ -4,7 +4,7 @@ import { throwError } from "./vanilla_js/throwException.js";
 // arrayOperations();
 
 //例外処理
-const executeHandler = () => {
+const exceptionHandler = () => {
     try {
         throwError();//エラー発生➡catchへ
     } catch (err) {
@@ -13,4 +13,4 @@ const executeHandler = () => {
         //エラーを捕まえても動作させたい処理があればここに書く
     }
 };
-executeHandler();
+exeeptionHandler();
