@@ -11,7 +11,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "http": "^0.0.1-security"
+    "@types/node": "^24.4.0",
+    "http": "^0.0.1-security",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
