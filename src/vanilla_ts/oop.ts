@@ -46,3 +46,33 @@ class Enemy extends Character {
     }
 }
 
+/*
+演習問題2: バトルマネージャーを実装せよ
+*/
+const isHealer = (character: Character): character is Character & Healer => {
+    return "heal" in character;
+}
+
+const startBattleTurn = (characters: Character[]): void => {
+    characters.forEach((attacker, index) => {
+        const targetIndex = (index + 1) % characters.length;
+        const target = characters[targetIndex];
+
+        //攻撃を実行する
+        if (target) {
+            attacker.attack(target);
+
+            //ヒーラーならば回復も実行
+            if (isHealer(attacker)) {
+                attacker.heal(attacker);
+            };
+        };
+    });
+};
+
+const characters: Character[] = [
+    new Hero("勇者", 100),
+    new Enemy("スライム", 30),
+];
+
+startBattleTurn(characters);
