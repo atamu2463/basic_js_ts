@@ -8,10 +8,14 @@ interface Healer {
 
 abstract class Character {
 
+    static characterCount: number = 0;
+
     constructor(
         public readonly name: string,
         protected _hp: number
-    ) {}
+    ) {
+        Character.characterCount++;
+    };
 
     abstract attack(target: Character): void;
 
@@ -25,6 +29,10 @@ abstract class Character {
     }
     recieveHealing(amount: number): void {
         this._hp += amount;
+    }
+
+    static showTotalCharacters(): void {
+        console.log(`現在、合計${this.characterCount}人のキャラクターが生成されています`)
     }
 }
 
@@ -76,3 +84,8 @@ const characters: Character[] = [
 ];
 
 startBattleTurn(characters);
+
+/*
+演習問題3：静的メンバ（static）とインスタンスの管理
+*/
+Character.showTotalCharacters();
